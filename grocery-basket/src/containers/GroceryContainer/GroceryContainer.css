@@ -1,0 +1,17 @@
+.GroceryContainer{
+    width:50%;
+    margin-right:25px;
+    border: 1px solid #ccc;
+}
+.GroceryContainer header h3{
+    padding-left:15px;
+}
+
+.GroceryContainer ul{
+    list-style-type: none;
+}
+
+.GroceryContainer header{
+    margin-right: 50px;
+    margin-left: 30px;
+}

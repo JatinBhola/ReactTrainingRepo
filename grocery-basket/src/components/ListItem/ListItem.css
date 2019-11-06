@@ -1,0 +1,19 @@
+.list-item{
+    line-height: 32px;
+    vertical-align: middle;
+    margin-bottom: 15px;
+    margin-right: 50px;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+.list-item.even-item{
+    background-color: #eee;
+}
+
+.list-item.odd-item{
+    background-color: #ccc;
+}
+
+.list-item.bought{
+    text-decoration: line-through;
+}

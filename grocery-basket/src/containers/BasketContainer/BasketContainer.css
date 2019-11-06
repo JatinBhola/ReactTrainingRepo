@@ -1,0 +1,29 @@
+.BasketContainer{
+    width:50%;
+    margin-left:25px;
+    border: 1px solid #ccc;
+
+}
+.BasketContainer header h3{
+    padding-left:15px;
+}
+
+.BasketContainer ul{
+    list-style-type: none;
+}
+li.bought{
+    text-decoration: line-through;
+}
+
+.trash-icon{
+    color:darksalmon;
+    float: right;
+}
+.trash-icon:hover{
+    color:red
+}
+
+.BasketContainer header{
+    margin-right: 50px;
+    margin-left: 30px;
+}
