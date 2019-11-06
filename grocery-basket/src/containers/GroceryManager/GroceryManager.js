@@ -114,11 +114,11 @@ class GroceryManager extends Component{
             this.setState({basket:updatedBasket})
         }
     }
-    purchaseItem = (itemId) => {
+    purchaseToggle = (itemId) => {
         const itemIndex = this.state.basket.findIndex(item => item.id === itemId);
         const updatedBasket = [...this.state.basket];
         const updatedBasketItem = {...updatedBasket[itemIndex]};
-        updatedBasketItem.bought= true
+        updatedBasketItem.bought= !updatedBasketItem.bought
         updatedBasket[itemIndex] = updatedBasketItem;
         this.setState({basket:updatedBasket});
     }
@@ -149,7 +149,7 @@ class GroceryManager extends Component{
                     <GroceryContainer groceries={this.state.groceryItems} selectGrocery={this.addToBasket} />
                     <BasketContainer 
                         basketItems={basketItemList} 
-                        purchaseItem={this.purchaseItem}
+                        purchaseItem={this.purchaseToggle}
                         clearBasket={this.clearBasket} />
                 </div>
                 <Footer 
