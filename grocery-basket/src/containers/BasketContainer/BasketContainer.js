@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faShoppingBag, faTrash, faMinusSquare} from '@fortawesome/free-solid-svg-icons';
-import './BasketContainer.css';
+import styles from './BasketContainer.module.css';
 import ListItem from '../../components/ListItem/ListItem';
 class BasketContainer extends Component{
     render(){
@@ -19,20 +19,21 @@ class BasketContainer extends Component{
                     key={item.id}
                     iconVal={faMinusSquare}
                     colorVal={"red"}
-                    classes={[item.bought ? "bought": "", ind%2 === 0 ? "even-item": "odd-item"]}
+                    bought={item.bought}
+                    even={ind%2 === 0}
                     click={this.props.purchaseItem.bind(this,item.id)}>
                     {item.count} {item.name}
                 </ListItem>
             ));
         }
         return (
-            <div className="BasketContainer">
+            <div className={styles.BasketContainer}>
                 <header>
                     <h3>
                         <FontAwesomeIcon icon={faShoppingBag} />
                         Basket
                         {this.props.basketItems.length > 0 ?<span 
-                            className="trash-icon"
+                            className={styles.trashIcon}
                             onClick={this.props.clearBasket}><FontAwesomeIcon icon={faTrash} /></span>: null}
                     </h3>
                 </header>

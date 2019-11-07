@@ -1,5 +1,5 @@
 import React,{ useState} from 'react';
-import './ListItem.css'
+import styles from './ListItem.module.css'
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 const ListItem = (props)=>{
@@ -10,11 +10,11 @@ const ListItem = (props)=>{
     const mouseOutHandler = (event)=>{
         setState({hovered:false})
     }
-    
+    const liClasses = [styles.listItem, props.even? styles.evenItem:styles.oddItem, props.bought? styles.bought:""]
     return (
     <li 
         onClick={props.click}
-        className={props.classes.concat('list-item').join(' ')}
+        className={liClasses.join(' ')}
         onMouseEnter={mouseInHandler}
         onMouseLeave={mouseOutHandler}>
         <FontAwesomeIcon style={{paddingRight:"5px"}} icon={props.iconVal} color={state.hovered ? props.colorVal : "white"}/>{props.children}

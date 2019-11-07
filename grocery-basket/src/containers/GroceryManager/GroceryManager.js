@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GroceryContainer from '../GroceryContainer/GroceryContainer';
 import BasketContainer from '../BasketContainer/BasketContainer';
-import './GroceryManager.css';
+import styles from './GroceryManager.module.css';
 import Footer from '../../components/FooterComponent/Footer';
 
 class GroceryManager extends Component{
@@ -145,7 +145,7 @@ class GroceryManager extends Component{
         }
         return (
             <div>
-                <div className="GroceryManager">
+                <div className={styles.GroceryManager}>
                     <GroceryContainer groceries={this.state.groceryItems} selectGrocery={this.addToBasket} />
                     <BasketContainer 
                         basketItems={basketItemList} 
